@@ -19,7 +19,24 @@
                     }
                     } -->
 
-                    @for (count of [1,2,3,4,5,6]; track fruitlist) {
+
+                    @for (index of [0, 1, 2, 3, 4]; track $index) {
+                    @switch (true) {
+                    @case (item.stars < index) { <img src="./assets/img/stars/star-empty.svg" alt="" srcset="">
+                        }
+                        @case (item.stars < index + 0.75 && item.stars> index + 0.24) {
+                            <img src="./assets/img/stars/star-half.svg" alt="" srcset="">
+
+                            }
+                            @default{
+                            <img src="./assets/img/stars/star.svg" alt="" srcset="">
+
+                            }
+                            }
+                            }
+
+
+                            <!-- @for (count of [1,2,3,4,5,6]; track fruitlist) {
                     @if (item.stars >= count) {
                     <img src="./assets/img/stars/star.svg" alt="" srcset="">
 
@@ -30,20 +47,29 @@
                     <img src="./assets/img/stars/star-empty.svg" alt="" srcset="">
 
                     }
+                    } -->
+
+                            <!-- @for (count of [1,2,3,4,5,6]; track fruitlist) {
+
+                    @switch (true) {
+                    @case (item.stars >= count) {
+                    <img src="./assets/img/stars/star.svg" alt="" srcset="">
                     }
 
-
-                    @for (count of [1,2,3,4,5,6]; track fruitlist) {
-
-                    @switch (item.stars >= count) {
-                    @case (true) {}
+                    @case (item.stars >= count - 0.5) {
+                    <img src="./assets/img/stars/star-half.svg" alt="" srcset="">
                     }
 
-
+                    @default {
+                    <img src="./assets/img/stars/star-empty.svg" alt="" srcset="">
                     }
+                    }
+                    } -->
 
 
-                    <p>({{item.stars}})</p>
+
+
+                            <p>({{item.stars}})</p>
                 </div>
             </div>
             <div><b>Art:</b><br>{{item.genus}}</div>
