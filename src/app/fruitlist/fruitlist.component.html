@@ -1,44 +1,7 @@
 <div class="fruitlist_content">
-    @for(item of fruitlist; track item.name; let index = $index){
-    <section class="singleFruitBox">
-        <div>
-            <img src="./assets/img/fruits/{{item.img}}" alt="" srcset="">
-        </div>
-        <div>
-            <h2> <app-singlefruit [testNumber]="index"></app-singlefruit> {{item.name}}</h2>
-            <div>
-                <p><b>Bewertung:</b></p>
-                <div>
-                    @for (index of [0, 1, 2, 3, 4]; track $index) {
-                    @switch (true) {
-                    @case (item.stars < index) { <img src="./assets/img/stars/star-empty.svg" alt="" srcset="">
-                        }
-                        @case (item.stars < index + 0.75 && item.stars> index + 0.24) {
-                            <img src="./assets/img/stars/star-half.svg" alt="" srcset="">
-                            }
-                            @default{
-                            <img src="./assets/img/stars/star.svg" alt="" srcset="">
-                            }
-                            }
-                            }
-                    <p [ngClass]="getRatingColor(item.stars)">({{item.stars}})</p>
+    @for(singelfruit of fruitlist; track singelfruit.name; let index = $index){
 
-                </div>
-            </div>
-            <div><b>Art:</b><br>{{item.genus}}</div>
-            <div><b>Beschreibung:</b><br>{{item.description}}</div>
-            <div>
-                <div>
-                    @for (review of item.reviews; track review) {
-                    <div> <b>{{review.name}}:</b><br>{{review.text}} </div>
-                    } @empty {
-                    <div> Noch keine Kommentare. Schreibe du das erste! </div>
-                    }
-                </div>
-                <div><input type="text"><button><img src="./assets/img/arrow-35-32.png" alt="" srcset=""></button>
-                </div>
-            </div>
-        </div>
-    </section>
+    <app-singlefruit [fruit]="singelfruit"></app-singlefruit>
+
     }
 </div>
