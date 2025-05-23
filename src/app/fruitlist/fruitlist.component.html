@@ -21,7 +21,7 @@
                             }
                             }
                             }
-                            <p [ngClass]="{'fontColorBad': item.stars < 3, 'fontColorGood': item.stars > 3}"> ({{item.stars}})</p>
+                    <p [ngClass]="getRatingColor(item.stars)">({{item.stars}})</p>
 
                 </div>
             </div>

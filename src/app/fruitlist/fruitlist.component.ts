@@ -82,7 +82,8 @@ export class FruitlistComponent {
     },
   ];
 
-  setRatingColor() {
-    
+  getRatingColor(stars: number): string {
+    let ratingColor = stars < 3 ? 'fontColorBad' : 'fontColorGood';
+    return ratingColor;
   }
 }
