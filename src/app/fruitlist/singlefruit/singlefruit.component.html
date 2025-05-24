@@ -7,7 +7,7 @@
             <div>
                 <p><b>Bewertung:</b></p>
                 <div>
-                    @for (index of [0, 1, 2, 3, 4]; track fruit) {
+                    @for (index of [0, 1, 2, 3, 4]; track index) {
                     @switch (true) {
                     @case (fruit.stars < index) { <img src="./assets/img/stars/star-empty.svg" alt="" srcset="">
                         }
@@ -19,7 +19,7 @@
                             }
                             }
                             }
-                    <p>({{fruit.stars}})</p>
+                    <p >({{fruit.stars}})</p>
 
                 </div>
             </div>
@@ -33,7 +33,7 @@
                     <div> Noch keine Kommentare. Schreibe du das erste! </div>
                     }
                 </div>
-                <div><input type="text"><button><img src="./assets/img/arrow-35-32.png" alt="" srcset=""></button>
+                <div><input [(ngModel)]="inputData" type="text"><button><img (click) = "sendInputData()" src="./assets/img/arrow-35-32.png" alt="" srcset=""></button>
                 </div>
             </div>
         </div>

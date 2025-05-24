@@ -83,6 +83,10 @@ export class FruitlistComponent {
     },
   ];
 
+  addComment(comment: string, index: number) {
+    this.fruitlist[index].reviews.unshift({ name: 'Simon F.', text: comment })
+  }
+
   getRatingColor(stars: number): string {
     let ratingColor = stars < 3 ? 'fontColorBad' : 'fontColorGood';
     return ratingColor;
