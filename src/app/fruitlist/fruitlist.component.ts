@@ -21,6 +21,7 @@ export class FruitlistComponent {
         { name: 'Kevin W.', text: 'ist lecker' },
         { name: 'Arne P.', text: 'nicht so meins' },
       ],
+      liked: false,
     },
     //
     {
@@ -35,6 +36,7 @@ export class FruitlistComponent {
         { name: 'Waldemar W.', text: 'gut für Obstsalat' },
         { name: 'Olaf P.', text: 'Kann man mal machen' },
       ],
+      liked: false,
     },
     {
       name: 'Sauerkirsche',
@@ -44,6 +46,7 @@ export class FruitlistComponent {
       genus: 'Pflanzenart aus der Familie der Rosengewächse (Rosaceae)',
       stars: 3.7,
       reviews: [{ name: 'Horst', text: 'definitiv nicht süß' }],
+      liked: false,
     },
     {
       name: 'Erdbeere',
@@ -56,6 +59,7 @@ export class FruitlistComponent {
         { name: 'Mandy K.', text: 'perfekt für Kuchen' },
         { name: 'Olaf P.', text: 'Kann man auch mal machen' },
       ],
+      liked: false,
     },
     {
       name: 'Zitrone',
@@ -68,6 +72,7 @@ export class FruitlistComponent {
         { name: 'Horst', text: 'auch definitiv nicht süß' },
         { name: 'Paul K.', text: 'nicht perfekt für Kuchen' },
       ],
+      liked: false,
     },
     {
       name: 'Orange',
@@ -80,15 +85,18 @@ export class FruitlistComponent {
         { name: 'Kevin W.', text: 'Ganz gut in der Regel!' },
         { name: 'Oliver J.', text: 'Absoluter Favorit beim Frühstück' },
       ],
+      liked: false,
     },
   ];
 
   addComment(comment: string, index: number) {
-    this.fruitlist[index].reviews.unshift({ name: 'Simon F.', text: comment })
+    this.fruitlist[index].reviews.unshift({ name: 'Simon F.', text: comment });
   }
 
   getRatingColor(stars: number): string {
     let ratingColor = stars < 3 ? 'fontColorBad' : 'fontColorGood';
     return ratingColor;
   }
+
 }
+

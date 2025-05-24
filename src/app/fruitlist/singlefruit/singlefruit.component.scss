@@ -159,3 +159,14 @@
         }
     }
 }
+
+.icon-heart {
+    width: 40px;
+    margin-left: 16px;
+
+    &:hover {
+        cursor: pointer;
+        filter: brightness(1.2)
+    }
+}
+
