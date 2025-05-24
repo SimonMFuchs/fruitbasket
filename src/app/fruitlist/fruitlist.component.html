@@ -1,5 +1,5 @@
 <div onmouseover="" class="fruitlist_content">
-    @for(singelfruit of fruitlist; track singelfruit.name; let index = $index){
+    @for(singelfruit of fruitlistdata.fruitlist; track singelfruit.name; let index = $index){
 
     <app-singlefruit (fruitname)="addComment($event, index)" [fruit]="singelfruit"></app-singlefruit>
 
